@@ -1,65 +1,23 @@
-import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
-//import projImg2 from "../assets/img/project-img2.png";
-//import projImg3 from "../assets/img/project-img3.png";
+import projImg2 from "../assets/img/project-img2.png";
+import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-const fetchWebsitePreview = async (url) => {
-  try {
-    const response = await fetch("http://localhost:5000/website-preview", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        websiteUrl: url,
-      }),
-    });
 
-    const blobData = await response.blob();
-    return URL.createObjectURL(blobData);
-  } catch (error) {
-    console.error(`Error fetching website preview for ${url}:`, error);
-    throw error; // Rethrow the error to handle it in the calling component
-  }
-};
 
 export const Projects = () => {
  
   
-  const [e2eProjectPreview, setE2EProjectPreview] = useState(null);
-  const [websitePreview, setWebsitePreview] = useState(null);
-  
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [e2ePreview, webPreview] = await Promise.all([
-          fetchWebsitePreview("https://demo.opencart.com/"), 
-          fetchWebsitePreview("https://sunny-creponne-207bed.netlify.app/"),
-        ]);
-
-        setE2EProjectPreview(e2ePreview);
-        setWebsitePreview(webPreview);
-        
-      } catch (error) {
-        console.error("Error fetching website preview:", error);
-        
-      }
-    };
-
-    fetchData();
-  }, []);
-
   const projects = [
     {
       title: "E2E Testing with Cypress",
       description: "Automation testing using Cypress on OpenCart's Storefront web app. Implementation of CI/CD workflow through integration with GitHub Actions",
-      imgUrl: e2eProjectPreview || projImg1 ,
+      imgUrl: projImg2 ,
       link: "https://github.com/WanjaNjunge/opencart/"
     },
     {
@@ -114,7 +72,7 @@ export const Projects = () => {
                         <ProjectCard
                           title="Bank Website"
                           description="Fully responsive website with modern UI/UX in React JS with Tailwind"
-                          imgUrl={websitePreview || projImg1} 
+                          imgUrl={projImg3} 
                           link="https://sunny-creponne-207bed.netlify.app/"  
                         />
                       
@@ -122,7 +80,17 @@ export const Projects = () => {
                     </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Row className="justify-content-center">
+                      
+                      <ProjectCard
+                        title="A Tester on a Journey"
+                        description="Heyya, fellow tech enthusiasts! 👋 I'm thrilled to welcome you to my corner of the internet, where I'll be sharing my experiences, insights, and ..."
+                        imgUrl={projImg4} 
+                        link="https://wanjanjunge.hashnode.dev/a-tester-on-a-journey"  
+                      />
+                    
+                    
+                  </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
