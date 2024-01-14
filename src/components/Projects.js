@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
@@ -7,13 +8,58 @@ import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
+const fetchWebsitePreview = async (url) => {
+  try {
+    const response = await fetch("http://localhost:5000/website-preview", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        websiteUrl: url,
+      }),
+    });
+
+    const blobData = await response.blob();
+    return URL.createObjectURL(blobData);
+  } catch (error) {
+    console.error(`Error fetching website preview for ${url}:`, error);
+    throw error; // Rethrow the error to handle it in the calling component
+  }
+};
+
 export const Projects = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [e2eProjectPreview, setE2EProjectPreview] = useState(null);
+  const [websitePreview, setWebsitePreview] = useState(null);
+  
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [e2ePreview, webPreview] = await Promise.all([
+          fetchWebsitePreview("https://demo.opencart.com/"), 
+          fetchWebsitePreview("https://sunny-creponne-207bed.netlify.app/"),
+        ]);
+
+        setE2EProjectPreview(e2ePreview);
+        setWebsitePreview(webPreview);
+        setIsLoading(false);
+      } catch (error) {
+        setError("Error fetching website previews. Please try again.");
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const projects = [
     {
       title: "E2E Testing with Cypress",
       description: "Automation testing using Cypress on OpenCart's Storefront web app. Implementation of CI/CD workflow through integration with GitHub Actions",
-      imgUrl: projImg1,
+      imgUrl: e2eProjectPreview || projImg1 ,
       link: "https://github.com/WanjaNjunge/opencart/"
     },
     {
@@ -68,7 +114,7 @@ export const Projects = () => {
                         <ProjectCard
                           title="Bank Website"
                           description="Fully responsive website with modern UI/UX in React JS with Tailwind"
-                          imgUrl={projImg1}  
+                          imgUrl={websitePreview || projImg1} 
                           link="https://sunny-creponne-207bed.netlify.app/"  
                         />
                       
