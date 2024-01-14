@@ -29,8 +29,8 @@ const fetchWebsitePreview = async (url) => {
 };
 
 export const Projects = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+ 
+  
   const [e2eProjectPreview, setE2EProjectPreview] = useState(null);
   const [websitePreview, setWebsitePreview] = useState(null);
   
@@ -45,10 +45,10 @@ export const Projects = () => {
 
         setE2EProjectPreview(e2ePreview);
         setWebsitePreview(webPreview);
-        setIsLoading(false);
+        
       } catch (error) {
-        setError("Error fetching website previews. Please try again.");
-        setIsLoading(false);
+        console.error("Error fetching website preview:", error);
+        
       }
     };
 
