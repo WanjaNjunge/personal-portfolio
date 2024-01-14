@@ -5,15 +5,16 @@ require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const cors = require("cors");
+//const cors = require("cors");
 const nodemailer = require("nodemailer");
 
-// server used to send send emails
+/* server used to send send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
+*/
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
