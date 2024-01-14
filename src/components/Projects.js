@@ -1,7 +1,7 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
+//import projImg2 from "../assets/img/project-img2.png";
 //import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
@@ -19,7 +19,7 @@ export const Projects = () => {
     {
       title: "Manual Testing Documentation",
       description: "Test plan, test cases and bug reporting for OpenCart's web app",
-      imgUrl: projImg2,
+      imgUrl: projImg1,
       link: "https://drive.google.com/drive/folders/1-m_byNsic4szdxaKj3coYTr-fQReDHD5?usp=sharing"
     }
   ];
@@ -48,10 +48,11 @@ export const Projects = () => {
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
-                      <Row>
+                      <Row className="justify-content-center">
                         {
                           projects.map((project, index) => {
                             return (
+                              
                               <ProjectCard
                                 key={index}
                                 {...project}
@@ -62,7 +63,17 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Row className="justify-content-center">
+                      
+                        <ProjectCard
+                          title="Bank Website"
+                          description="Fully responsive website with modern UI/UX in React JS with Tailwind"
+                          imgUrl={projImg1}  
+                          link="https://sunny-creponne-207bed.netlify.app/"  
+                        />
+                      
+                      
+                    </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>

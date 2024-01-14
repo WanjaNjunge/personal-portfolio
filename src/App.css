@@ -415,9 +415,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx {
   position: relative;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
   margin-bottom: 24px;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  height: 300px;
+}
+.proj-imgbx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Adjust to control how the image fits within the container */
 }
 .proj-imgbx::before {
   content: "";
@@ -472,7 +480,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   cursor: pointer;       
 }
 
-/************ Projects Css ************/
+/************ Contact Css ************/
 .contact {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0 200px 0;
