@@ -11,7 +11,7 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
           <span>{description}</span>
           <div className="view-more-button">
               <a href={link} target="_blank" rel="noopener noreferrer">
-                Read More
+                View More
               </a>
             </div>
         </div>

@@ -18,7 +18,7 @@ export const Projects = () => {
       title: "E2E Testing with Cypress",
       description: "Automation testing using Cypress on OpenCart's Storefront web app. Implementation of CI/CD workflow through integration with GitHub Actions",
       imgUrl: projImg2 ,
-      link: "https://github.com/WanjaNjunge/opencart/"
+      link: "https://github.com/WanjaNjunge/opencart/tree/master/e2e-testing"
     },
     {
       title: "Manual Testing Documentation",
@@ -41,10 +41,10 @@ export const Projects = () => {
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Quality Assurance</Nav.Link>
+                      <Nav.Link eventKey="first">QA</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Web Development</Nav.Link>
+                      <Nav.Link eventKey="second">Web Dev</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="third">Articles</Nav.Link>

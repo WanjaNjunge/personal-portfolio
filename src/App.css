@@ -73,6 +73,102 @@ input:focus, textarea:focus, select:focus {
 		padding: 0 150px;
 	}
 }
+/*Mobile*/
+@media (max-width: 480px) {
+  nav.navbar a.navbar-brand {
+    width: 100%; 
+    text-align: center; 
+    margin: 0; 
+  }
+  nav.navbar .navbar-toggler-icon {
+    border-bottom: 2px solid #fff; 
+  }
+  nav.navbar .navbar-nav {
+    flex-direction: column; 
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 10px 0; 
+    text-align: center; 
+  }
+  span.navbar-text {
+    display: block; 
+    text-align: center; 
+    margin-top: 10px; 
+  }
+  .social-icon {
+    margin: 10px auto; 
+  }
+  .navbar-text button {
+    margin: 15px 0; 
+  }
+}
+/*Extra small devices*/
+@media (min-width: 481px) and (max-width: 767px) {
+  nav.navbar {
+    padding: 12px 0;
+  }
+  nav.navbar a.navbar-brand {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+  nav.navbar .navbar-toggler-icon {
+    border-bottom: 2px solid #fff;
+    width: 20px; 
+    height: 15px;
+  }
+  nav.navbar .navbar-nav {
+    flex-direction: column;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 8px 20px; 
+  }
+  span.navbar-text {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .social-icon {
+    margin: 10px auto;
+  }
+  .navbar-text button {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  /* Adjustments for the banner */
+  .banner {
+    padding: 150px 0 50px 0;
+  }
+  .banner h1 {
+    font-size: 40px;
+  }
+
+  /* Adjustments for the skills section */
+  .skill h2 {
+    font-size: 30px;
+  }
+
+
+
+
+}
+/*Small Tablets*/
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+/*Large tablets/laptops*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  
+}
+/*Desktops*/
+@media (min-width: 1200px) and (max-width: 1919px) {
+  
+}
+/*extra large screens*/
+@media (min-width: 1920px) {
+  
+}
 
 p.success {
 	color: green;
@@ -490,12 +586,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #4A2FBD; /* Choose a color that fits your design */
+  background-color: #4A2FBD; 
   transition: background-color 0.3s ease-in-out;
 }
 
 .project .proj-txtx .view-more-button a:hover {
-  background-color: #AA367C; /* Choose a hover color */
+  background-color: #AA367C; 
 }
 
 /************ Contact Css ************/
@@ -572,11 +668,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
+  padding-top: 50px;
+  margin-top: auto;
   background-image: url('./assets/img/footer-bg.png');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.footer-logo {
+  max-width: 100%;
+}
+.social-icon {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
 }
 .newsletter-bx {
   background: #FFFFFF;
