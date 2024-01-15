@@ -169,13 +169,18 @@ input:focus, textarea:focus, select:focus {
 @media (min-width: 1920px) {
   
 }
+.status-message {
+  font-size: 16px;
+  margin-top: 10px;
+  /* Add other common styles for status messages */
+}
 
 p.success {
-	color: green;
+	color: white;
 }
 
 p.danger {
-	color: red;
+	color: black;
 }
 /************ Navbar Css ************/
 nav.navbar {
@@ -521,7 +526,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .proj-imgbx img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Adjust to control how the image fits within the container */
+  object-fit: cover; 
 }
 .proj-imgbx::before {
   content: "";
