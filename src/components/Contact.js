@@ -40,7 +40,7 @@ export const Contact = () => {
     if (result.code === 200) {
       setStatus({ success: true, message: 'Message sent successfully'});
     } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+      setStatus({ succes: false, message: 'Message sent successfully'});
     }
   };
 
