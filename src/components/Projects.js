@@ -3,7 +3,9 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
-import projImg4 from "../assets/img/project-img4.png"
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -25,6 +27,12 @@ export const Projects = () => {
       description: "Test plan, test cases and bug reporting for OpenCart's web app",
       imgUrl: projImg1,
       link: "https://drive.google.com/drive/folders/1-m_byNsic4szdxaKj3coYTr-fQReDHD5?usp=sharing"
+    },
+    {
+      title: "API Documentation",
+      description: "The Movie Database(TMDb) API documentation using Postman",
+      imgUrl: projImg5,
+      link: "https://documenter.getpostman.com/view/28279354/2s9YsNeWJj#9d0de284-e016-4e96-be04-3de0c89991a1"
     }
   ];
 
@@ -70,10 +78,16 @@ export const Projects = () => {
                     <Row className="justify-content-center">
                       
                         <ProjectCard
-                          title="Bank Website"
+                          title="Bank App Landing Page"
                           description="Fully responsive website with modern UI/UX in React JS with Tailwind"
                           imgUrl={projImg3} 
                           link="https://sunny-creponne-207bed.netlify.app/"  
+                        />
+                        <ProjectCard
+                          title="eCommerce Website"
+                          description="Built with modern UI/UX in React JS with Bootstrap"
+                          imgUrl={projImg6} 
+                          link="https://silicon-savannah.netlify.app/"  
                         />
                       
                       
