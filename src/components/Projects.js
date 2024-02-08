@@ -20,7 +20,7 @@ export const Projects = () => {
       title: "E2E Testing with Cypress",
       description: "Automation testing using Cypress on OpenCart's Storefront web app. Implementation of CI/CD workflow through integration with GitHub Actions",
       imgUrl: projImg2 ,
-      link: "https://github.com/WanjaNjunge/opencart/tree/master/e2e-testing"
+      link: "https://github.com/WanjaNjunge/opencart/blob/master/e2e-testing/README.md"
     },
     {
       title: "Manual Testing Documentation",
